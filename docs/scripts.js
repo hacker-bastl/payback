@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	dispatchEvent(new CustomEvent('barcode', {
 		detail: Array.from([
 			2408775194852
-			2408775194852,
 			2402016060104,
 			2401090558439,
 		]).at(parseInt(Math.random() * 4)),
