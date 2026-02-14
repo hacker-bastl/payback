@@ -26,8 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	const parent = document.body.querySelector(`#${command.section}`);
 	const image = document.createElement('img');
 	image.setAttribute('src', address);
-	image.setAttribute('title', code);
-	image.setAttribute('alt', code);
 	image.addEventListener('load', function() {
 		image.setAttribute('width', image.width);
 		image.setAttribute('height', image.height);
@@ -94,8 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	const parent = document.body.querySelector(`#${command.section}`);
 	const image = document.createElement('img');
 	image.setAttribute('src', address);
-	image.setAttribute('title', code);
-	image.setAttribute('alt', code);
 	image.addEventListener('load', function() {
 		image.setAttribute('width', image.width);
 		image.setAttribute('height', image.height);
