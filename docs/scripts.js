@@ -37,3 +37,15 @@ document.addEventListener('DOMContentLoaded', function() {
 		]).at(parseInt(Math.random() * 3)),
 	})
 });
+
+
+addEventListener('hashchange', function() {
+	const valid = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
+		const show = `#${node.getAttribute('id')}` == location.hash;
+		node.style.display = show ? 'block' : 'none';
+		return show;
+	}).filter(Boolean);
+
+	if (valid.length < 1)
+		location.hash = '#start';
+});
