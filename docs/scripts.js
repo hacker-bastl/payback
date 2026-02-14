@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		image.setAttribute('width', loader.width);
 		image.setAttribute('height', loader.height);
 		image.setAttribute('src', address.href);
+
+		const delay = Math.sin(new Date().getTime() / 2E3) * 0.5 + 0.5;;
 		setTimeout(repeat, 2 * 1E3);
 	});
 	loader.addEventListener('error', function() {
