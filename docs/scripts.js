@@ -34,6 +34,17 @@ document.addEventListener('DOMContentLoaded', function() {
 	header.innerHTML = `<img src="${address}" />`;
 });
 
+
+
+
+dispatchEvent(new CustomEvent('barcode', {
+	detail: {
+		foo: 'bar'
+	}
+}))
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
 
