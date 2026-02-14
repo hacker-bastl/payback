@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		image.setAttribute('src', address.href);
 
 		const delay = Math.sin(new Date().getTime() / 2E3) * 0.5 + 0.5;
-		const seconds = 1 + del;
-		ay * 3;
+		const seconds = 1 + delay * 3;
 		setTimeout(repeat, parseInt(seconds * 1E3));
 	});
 	loader.addEventListener('error', function() {
