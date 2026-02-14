@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function repeat() {
 
+
 	const code = Array.from([
 		2401090558439, // demo
 		2402016060104, // demo
@@ -9,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 	const address = `//${'barcode.tec-it.com/barcode.ashx'}?${new URLSearchParams({code:'EAN13',data:code}).toString()}`;
 	const image = document.body.querySelector('#card>img');
 	const url = new URL(`https://${image.getAttribute('src')}`);
+	url.searchParams.set('data', '2401090558439')
+	url.href
 	const loader = document.createElement('img');
 	loader.addEventListener('load', function() {
 		image.setAttribute('width', loader.width);
