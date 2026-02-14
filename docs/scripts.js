@@ -47,9 +47,9 @@ addEventListener('hashchange', function() {
 		const show = `#${node.getAttribute('id')}` == location.hash;
 		node.style.display = show ? 'block' : 'none';
 		return show;
-	}).length > 0;
+	});
 
-	if (!valid)
+	if (valid.length < 1)
 		location.hash = '#card'
 });
 
