@@ -16,17 +16,12 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 	loader.addEventListener('load', function() {
 		image.setAttribute('width', loader.width);
 		image.setAttribute('height', loader.height);
-		image.setAttribute('src', address);
-
-		url.href
-		image.setAttribute('src', address);
+		image.setAttribute('src', url.href);
 		setTimeout(repeat, 3 * 1E3);
-
 	});
 	loader.addEventListener('error', function() {
 		setTimeout(repeat, 7 * 1E3);
 	});
-	loader.setAttribute('src', address);
-	loader.setAttribute('src', address);
+	loader.setAttribute('src', url.href);
 
 });
