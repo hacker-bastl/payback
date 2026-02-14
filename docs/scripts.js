@@ -1,3 +1,18 @@
+const simulator = {
+	barcode: function() {
+
+	},
+	qrcode: function() {
+
+	},
+	image: function() {
+
+	},
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
 	dispatchEvent(new CustomEvent('barcode', {
 		detail: Array.from([
