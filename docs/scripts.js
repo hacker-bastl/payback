@@ -1,5 +1,15 @@
 const simulator = {
 	barcode: function(command) {
+		const address = `//${command.provider}?${new URLSearchParams(command.parameter).toString()}`;
+		const parent = document.body.querySelector(command.section);
+		const image = document.createElement('img');
+		image.setAttribute('src', address);
+		image.addEventListener('load', function() {
+			image.setAttribute('width', image.width);
+			image.setAttribute('height', image.height);
+			parent.appendChild(image);
+		});
+		image.setAttribute('src', address);
 
 	},
 	qrcode: function(command) {
@@ -34,16 +44,6 @@ addEventListener('barcode', function(event) {
 		},
 	};
 
-	const address = `//${command.provider}?${new URLSearchParams(command.parameter).toString()}`;
-	const parent = document.body.querySelector(command.section);
-	const image = document.createElement('img');
-	image.setAttribute('src', address);
-	image.addEventListener('load', function() {
-		image.setAttribute('width', image.width);
-		image.setAttribute('height', image.height);
-		parent.appendChild(image);
-	});
-	image.setAttribute('src', address);
 });
 
 
