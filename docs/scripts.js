@@ -37,22 +37,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-dispatchEvent(new CustomEvent('barcode', {
-	detail: {
-		code: 2408775194852,
-	}
-}))
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
+	dispatchEvent(new CustomEvent('barcode', {
+		detail: 2408775194852,
+	}));
+});
+
+
+addEventListener('barcode', function(event) {
 
 
 	const command = {
 		provider: 'barcode.tec-it.com/barcode.ashx',
 		section: '#barcode',
 		parameter: {
-			data: 2408775194852,
+			data: event.detail,
 			code: 'EAN13',
 		},
 	};
