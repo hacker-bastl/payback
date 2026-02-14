@@ -11,13 +11,17 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 	const image = document.body.querySelector('#card>img');
 	const url = new URL(`https://${image.getAttribute('src')}`);
 	url.searchParams.set('data', '2401090558439')
-	url.href
+
 	const loader = document.createElement('img');
 	loader.addEventListener('load', function() {
 		image.setAttribute('width', loader.width);
 		image.setAttribute('height', loader.height);
 		image.setAttribute('src', address);
+
+		url.href
+		image.setAttribute('src', address);
 		setTimeout(repeat, 3 * 1E3);
+
 	});
 	loader.addEventListener('error', function() {
 		setTimeout(repeat, 7 * 1E3);
