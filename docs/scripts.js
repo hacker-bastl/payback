@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
 	dispatchEvent(new CustomEvent('barcode', {
 		detail: Array.from([
-			2408775194852
-			2402016060104,
 			2401090558439,
+			2402016060104,
+			2408775194852
 		]).at(parseInt(Math.random() * 4)),
 	}));
 });
@@ -14,7 +14,7 @@ addEventListener('barcode', function(event) {
 		provider: 'barcode.tec-it.com/barcode.ashx',
 		section: '#barcode',
 		parameter: {
-			data: event.detail,
+			data: `${event.detail}`,
 			code: 'EAN13',
 		},
 	};
