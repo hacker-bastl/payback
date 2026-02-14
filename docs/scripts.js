@@ -42,6 +42,10 @@ const simulator = {
 
 
 
+addEventListener('hashchange', function() {
+	const section = document.body.querySelector(`main>section${location.hash}`);
+	console.log(section);
+})
 
 document.addEventListener('DOMContentLoaded', function() {
 	simulator.barcode({
