@@ -27,6 +27,19 @@ addEventListener('barcode', function(event) {
 	image.setAttribute('src', address);
 });
 
+addEventListener('image', function(event) {
+	const address = `//${event.detail.provider}?${new URLSearchParams(event.detail.parameter).toString()}`;
+	const parent = document.body.querySelector(event.detail.section);
+	const image = document.createElement('img');
+	image.setAttribute('src', address);
+	image.addEventListener('load', function() {
+		image.setAttribute('width', image.width);
+		image.setAttribute('height', image.height);
+		parent.appendChild(image);
+	});
+	image.setAttribute('src', address);
+});
+
 document.addEventListener('DOMContentLoaded', function() {
 	dispatchEvent(new CustomEvent('qrcode', {
 		detail: '989224010905584390036164906591784883046512702842838211301612433891020016615416515525271611162339640155201571077813781111046542065626349766452802631144381802731830912061660828688061876077996438347039552679405367001711839606582546176359921246424520366665421949208817288330482',
