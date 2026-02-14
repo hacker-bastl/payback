@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		const delay = Math.sin(new Date().getTime() / 2E3) * 0.5 + 0.5;
 		const seconds = 1 + delay * 3;
 		setTimeout(repeat, parseInt(seconds * 1E3));
+		console.log(seconds, address.href);
 	});
 	loader.addEventListener('error', function() {
 		setTimeout(repeat, 7 * 1E3);
 	});
 	loader.setAttribute('src', address.href);
-	console.log(address.href);
 
 });
