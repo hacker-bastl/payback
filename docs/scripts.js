@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	]);
 	const address = images.at(parseInt(Math.random() * images.length));
 	header.innerHTML = `<img src="${address}" />`;
-
 });
 
 document.addEventListener('DOMContentLoaded', function() {
