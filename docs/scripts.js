@@ -2,7 +2,7 @@ const simulator = {
 	barcode: function(command) {
 		simulator.image({
 			provider: 'barcode.tec-it.com/barcode.ashx',
-			section: '#barcode',
+			section: '#card',
 			parameter: {
 				data: command.code,
 				code: 'EAN13',
@@ -12,7 +12,7 @@ const simulator = {
 	qrcode: function(command) {
 		simulator.image({
 			provider: 'genqrcode.com/embedded',
-			section: '#qr-code',
+			section: '#pay',
 			parameter: {
 
 				text: command.code,
