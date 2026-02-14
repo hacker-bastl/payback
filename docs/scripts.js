@@ -19,6 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
 
+const address=`//assets.payback.de/static/5032b0a7-87c9-4f5f-80f3-f3d81277b7f7--1-head-image-resdata4.webp`;
+		document.body.querySelector('header').innerHTML = `<img src=${address />>>>}`;
+
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+
+
 	const command = {
 		provider: 'barcode.tec-it.com/barcode.ashx',
 		section: 'barcode',
