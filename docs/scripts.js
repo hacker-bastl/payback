@@ -11,58 +11,56 @@ const simulator = {
 	},
 	qrcode: function(command) {
 		simulator.image({
-			{
-				provider: 'genqrcode.com/embedded',
-				section: '#qr-code',
-				parameter: {
+			provider: 'genqrcode.com/embedded',
+			section: '#qr-code',
+			parameter: {
 
-					text: command.code,
+				text: command.code,
 
-					width: 500,
-					height: 500,
-					bordersize: 2,
-					imageformat: 'svg',
+				width: 500,
+				height: 500,
+				bordersize: 2,
+				imageformat: 'svg',
 
-					frame_text: 'SCAN ME',
-					language: 'en',
+				frame_text: 'SCAN ME',
+				language: 'en',
 
-					background_color: '#FFFFFFFF',
-					inner_eye_color: '#000000',
-					outer_eye_color: '#000000',
-					color: 'FF0000',
+				background_color: '#FFFFFFFF',
+				inner_eye_color: '#000000',
+				outer_eye_color: '#000000',
+				color: 'FF0000',
 
-					frame_text_icon_color: '#000000',
-					frame_text_icon: null,
-					frame_color: '#000000',
-					frame_background_color: '#FFFFFF',
-					frame_text_color: '#FFFFFF',
+				frame_text_icon_color: '#000000',
+				frame_text_icon: null,
+				frame_color: '#000000',
+				frame_background_color: '#FFFFFF',
+				frame_text_color: '#FFFFFF',
 
-					gradient_style: 0,
-					gradient_color_start: '#FF0000',
-					gradient_color_end: '#7F007F',
-					gradient_start_offset: 5,
-					gradient_end_offset: 95,
+				gradient_style: 0,
+				gradient_color_start: '#FF0000',
+				gradient_color_end: '#7F007F',
+				gradient_start_offset: 5,
+				gradient_end_offset: 95,
 
-					invert_colors: false,
+				invert_colors: false,
 
-					logo_remove_background: null,
-					logo: null,
+				logo_remove_background: null,
+				logo: null,
 
-					stl_type: 1,
-					stl_size: 100,
-					stl_qr_height: 1.5,
-					stl_base_height: 2,
-					stl_include_stands: false,
-					stl_qr_magnet_type: 3,
-					stl_qr_magnet_count: 0,
+				stl_type: 1,
+				stl_size: 100,
+				stl_qr_height: 1.5,
+				stl_base_height: 2,
+				stl_include_stands: false,
+				stl_qr_magnet_type: 3,
+				stl_qr_magnet_count: 0,
 
-					inner_eye_style: 0,
-					outer_eye_style: 0,
-					frame_style: 0,
-					style: 0,
-					type: 0,
-				}
-			}
+				inner_eye_style: 0,
+				outer_eye_style: 0,
+				frame_style: 0,
+				style: 0,
+				type: 0,
+			},
 		});
 	},
 	image: function(command) {
