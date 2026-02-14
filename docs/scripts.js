@@ -1,4 +1,4 @@
-document.addEventListener('DEACTIVATED', function repeat() {
+document.addEventListener('DOMContentLoaded', function repeat() {
 
 	if (location.hash != '#card') return setTimeout(repeat, 5E3);
 
@@ -33,7 +33,7 @@ document.addEventListener('DEACTIVATED', function repeat() {
 
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('ALTERNATIVE', function() {
 
 
 	const available = Array.from([
