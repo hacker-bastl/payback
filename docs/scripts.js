@@ -31,27 +31,9 @@ const simulator = {
 document.addEventListener('DOMContentLoaded', function() {
 	simulator.barcode({
 		code: Array.from([
-			2401090558439,
-			2402016060104,
-			2408775194852
+			2401090558439, // demo
+			2402016060104, // demo
+			2408775194852, // aral
 		]).at(parseInt(Math.random() * 3)),
 	})
-});
-
-
-
-
-addEventListener('hashchange', function() {
-	const invalid = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
-		const show = `#${node.getAttribute('id')}` == location.hash;
-		node.style.display = show ? 'block' : 'none';
-		return show;
-	}).length < 1;
-
-	if (invalid)
-		location.hash = '#start';
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-	dispatchEvent(new CustomEvent('hashchange'));
 });
