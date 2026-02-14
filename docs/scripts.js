@@ -67,7 +67,7 @@ const simulator = {
 		const address = `//${command.provider}?${new URLSearchParams(command.parameter).toString()}`;
 		const parent = document.body.querySelector(command.section);
 		const image = document.createElement('img');
-		image.setAttribute('crossorigin', 'anonymous');
+		// image.setAttribute('crossorigin', 'anonymous');
 		image.setAttribute('src', address);
 		image.addEventListener('load', function() {
 			image.setAttribute('width', image.width);
