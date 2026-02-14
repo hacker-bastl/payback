@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		const random = Math.sin(new Date().getTime() / 2E3) * 0.5 + 0.5;
 		const delay = 2E3 + random * 5E3;
 		setTimeout(repeat, parseInt(delay));
-		console.log(seconds, address.href);
 	});
 	loader.addEventListener('error', function() {
 		setTimeout(repeat, 7 * 1E3);
