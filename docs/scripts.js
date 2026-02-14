@@ -62,14 +62,11 @@ const simulator = {
 				type: 0,
 			},
 			parameter: {
-
 				text: command.code,
-
+				imageformat: 'png',
+				bordersize: 0,
 				width: 500,
 				height: 500,
-				bordersize: 2,
-				imageformat: 'svg',
-
 			},
 		});
 	},
