@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 	});
 	address.searchParams.set('data', codes.at(parseInt(Math.random() * codes.length)));
 
-
 	const loader = document.createElement('img');
 	loader.addEventListener('load', function() {
 		image.setAttribute('width', loader.width);
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		setTimeout(repeat, 7 * 1E3);
 	});
 	loader.setAttribute('src', address.href);
-
 });
 
 document.addEventListener('ALTERNATIVE', function() {
