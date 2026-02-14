@@ -131,8 +131,11 @@
 
         document.addEventListener('DOMContentLoaded', function() {
         	const sections = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
-        		return `#${node.getAttribute('id')}`;
+                const name = `#${node.getAttribute('id')}`;
+                node.style.display = name == location.hash ? 'block' : 'none;'
+        		return name;
         	});
+
         	if (!sections.includes(location.hash))
         		location.hash = '#start';
         });
