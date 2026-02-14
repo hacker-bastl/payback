@@ -1,8 +1,6 @@
 const simulator = {
 	barcode: function(command) {
 		simulator.image({
-			provider: 'barcode.tec-it.com/barcode.ashx',
-			section: '#card',
 			parameter: {
 				code: 'EAN13',
 				data: command.code,
@@ -10,18 +8,18 @@ const simulator = {
 		})
 	},
 	image: function(command) {
-		const address = `//${command.provider}?${new URLSearchParams(command.parameter).toString()}`;
-		const parent = document.body.querySelector(command.section);
-		const image = document.createElement('img');
+
+		const address = `//${'barcode.tec-it.com/barcode.ashx'}?${new URLSearchParams(command.parameter).toString()}`;
+		const image = document.body.querySelector('#card>img');
+		const loader = document.createElement('img');
 		// image.setAttribute('crossorigin', 'anonymous');
-		image.setAttribute('src', address);
-		image.addEventListener('load', function() {
-			image.setAttribute('width', image.width);
-			image.setAttribute('height', image.height);
-			parent.innerHTML = ``;
-			parent.appendChild(image);
+		loader.setAttribute('src', address);
+		loader.addEventListener('load', function() {
+			image.setAttribute('width', loader.width);
+			image.setAttribute('height', loader.height);
+			image.setAttribute('src', address);
 		});
-		image.setAttribute('src', address);
+		loader.setAttribute('src', address);
 	},
 };
 
