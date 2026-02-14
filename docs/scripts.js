@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		image.setAttribute('width', loader.width);
 		image.setAttribute('height', loader.height);
 		image.setAttribute('src', address.href);
-		setTimeout(repeat, 5 * 1E3);
+		setTimeout(repeat, 3 * 1E3);
 	});
 	loader.addEventListener('error', function() {
 		setTimeout(repeat, 7 * 1E3);
