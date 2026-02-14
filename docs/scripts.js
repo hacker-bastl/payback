@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', function repeat() {
 
+	const image = document.body.querySelector('#card>img');
+	const address = new URL(`https://${image.getAttribute('src')}`);
 
 	const code = Array.from([
 		2401090558439, // demo
 		2402016060104, // demo
 		2408775194852, // aral
-	]).at(parseInt(Math.random() * 3));
+	]).filter(function(entry) {
+		return String(entry) != address.searchParams.get('data');
+	}).at(parseInt(Math.random() * 2));
 
-	const image = document.body.querySelector('#card>img');
-	const address = new URL(`https://${image.getAttribute('src')}`);
 	address.searchParams.set('data', code);
 
 	const loader = document.createElement('img');
@@ -22,5 +24,6 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		setTimeout(repeat, 7 * 1E3);
 	});
 	loader.setAttribute('src', address.href);
+	console.log(address.href);
 
 });
