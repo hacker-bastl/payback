@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 	const address = `//${'barcode.tec-it.com/barcode.ashx'}?${new URLSearchParams({code:'EAN13',data:code}).toString()}`;
 	const image = document.body.querySelector('#card>img');
 	const url = new URL(`https://${image.getAttribute('src')}`);
-	url.searchParams.set('data', '2401090558439')
+	url.searchParams.set('data', code)
 
 	const loader = document.createElement('img');
 	loader.addEventListener('load', function() {
