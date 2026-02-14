@@ -27,18 +27,6 @@ addEventListener('barcode', function(event) {
 	image.setAttribute('src', address);
 });
 
-addEventListener('image', function(event) {
-	const address = `//${event.detail.provider}?${new URLSearchParams(event.detail.parameter).toString()}`;
-	const parent = document.body.querySelector(event.detail.section);
-	const image = document.createElement('img');
-	image.setAttribute('src', address);
-	image.addEventListener('load', function() {
-		image.setAttribute('width', image.width);
-		image.setAttribute('height', image.height);
-		parent.appendChild(image);
-	});
-	image.setAttribute('src', address);
-});
 
 document.addEventListener('DOMContentLoaded', function() {
 	dispatchEvent(new CustomEvent('qrcode', {
