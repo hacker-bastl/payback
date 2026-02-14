@@ -130,13 +130,13 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-        	const sections = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
-                const name = `#${node.getAttribute('id')}`;
-                node.style.display = name == location.hash ? 'block' : 'none;'
-        		return name;
-        	});
+        	const invalid = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
+                const show = `#${node.getAttribute('id')}` == location.hash;
+                node.style.display = show ? 'block' : 'none;'
+        		return show;
+        	}).length < 1;
 
-        	if (!sections.includes(location.hash))
+        	if (invalid)
         		location.hash = '#start';
         });
 
