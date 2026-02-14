@@ -48,6 +48,10 @@ addEventListener('hashchange', function() {
 })
 
 document.addEventListener('DOMContentLoaded', function() {
+	dispatchEvent(new CustomEvent('hashchange'));
+})
+
+document.addEventListener('DOMContentLoaded', function() {
 	simulator.barcode({
 		code: Array.from([
 			2401090558439,
