@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	const command = {
 		provider: 'barcode.tec-it.com/barcode.ashx',
-		section: 'barcode',
+		section: '#barcode',
 		parameter: {
 			data: 2408775194852,
 			code: 'EAN13',
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	};
 
 	const address = `//${command.provider}?${new URLSearchParams(command.parameter).toString()}`;
-	const parent = document.body.querySelector(`#${command.section}`);
+	const parent = document.body.querySelector(command.section);
 	const image = document.createElement('img');
 	image.setAttribute('src', address);
 	image.addEventListener('load', function() {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	const command = {
 		provider: 'genqrcode.com/embedded',
-		section: 'qr-code',
+		section: '#qr-code',
 		parameter: {
 
 			text: '989224010905584390036164906591784883046512702842838211301612433891020016615416515525271611162339640155201571077813781111046542065626349766452802631144381802731830912061660828688061876077996438347039552679405367001711839606582546176359921246424520366665421949208817288330482',
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	};
 
 	const address = `//${command.provider}?${new URLSearchParams(command.parameter).toString()}`;
-	const parent = document.body.querySelector(`#${command.section}`);
+	const parent = document.body.querySelector(command.section);
 	const image = document.createElement('img');
 	image.setAttribute('src', address);
 	image.addEventListener('load', function() {
