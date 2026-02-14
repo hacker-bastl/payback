@@ -40,10 +40,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-	const sections = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
-		return `#${node.getAttribute('id')}`;
+
+addEventListener('hashchange', function() {
+	Array.from(document.body.querySelectorAll('main>section')).forEach(function(node) {
+		node.style.display = `#${node.getAttribute('id')}` == location.hash ? 'block' : 'none';
 	});
-	if (!sections.includes(location.hash))
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+	const invalid = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
+		const show = `#${node.getAttribute('id')}` == location.hash;
+		node.style.display = show ? 'block' : 'none';
+		return show;
+	}).length < 1;
+
+	if (invalid)
 		location.hash = '#start';
 });
