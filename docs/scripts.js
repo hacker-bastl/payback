@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const request = new XMLHttpRequest();
 	request.addEventListener('load', function() {
 		const partner = JSON.parse(request.responseText);
+
 		document.body.querySelector('footer').innerHTML = Array.from([
 			'Jetzt Punkte einl&ouml;sen',
 			partner.sort(function() {
