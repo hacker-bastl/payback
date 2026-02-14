@@ -24,6 +24,58 @@
     <link href="//play-lh.googleusercontent.com/WiQDNH4bhP5D8MbOcUu8NKpOISLMTI53XZ_CDF521SAimMeToHzlMK3OmrkeIf81QWE=s128-rw" sizes="128x128" type="image/png" rel="icon" crossorigin="anonymous" />
     <link href="//www.payback.de/resource/blob/4506/b8323ff55b34054722769ae5652c22ae/main-favicon.ico" sizes="48x48" type="image/png" rel="icon" crossorigin="anonymous" />
 
+    <script type="text/javascript">
+
+        addEventListener('hashchange', function() {
+        	const valid = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
+        		const show = `#${node.getAttribute('id')}` == location.hash;
+        		node.style.display = show ? 'block' : 'none';
+        		return show;
+        	}).filter(Boolean);
+
+        	if (valid.length < 1)
+        		location.hash = '#start';
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        	dispatchEvent(new CustomEvent('hashchange'));
+        });
+
+    </script>
+    <script type="text/javascript">
+
+        document.addEventListener('DOMContentLoaded', function repeat() {
+
+        	if (location.hash != '#card') return setTimeout(repeat, 3 * 1E3);
+
+        	const image = document.body.querySelector('#card>img');
+        	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
+
+        	const codes = Array.from([
+        		2401090558439, // demo
+        		2402016060104, // demo
+        		2408775194852, // aral
+        	]).filter(function(entry) {
+        		return entry != parseInt(address.searchParams.get('data'));
+        	});
+        	address.searchParams.set('data', codes.at(parseInt(Math.random() * codes.length)));
+
+        	const loader = document.createElement('img');
+        	loader.addEventListener('load', function() {
+        		image.setAttribute('width', loader.width);
+        		image.setAttribute('height', loader.height);
+        		image.setAttribute('src', address.href);
+        		setTimeout(repeat, 3 * 1E3);
+        	});
+        	loader.addEventListener('error', function() {
+        		setTimeout(repeat, 7 * 1E3);
+        	});
+        	loader.setAttribute('src', address.href);
+        });
+
+
+    </script>
+
     <style type="text/css">
 
       body {
@@ -121,58 +173,6 @@
       }
 
     </style>
-
-    <script type="text/javascript">
-
-        document.addEventListener('DOMContentLoaded', function repeat() {
-
-        	if (location.hash != '#card') return setTimeout(repeat, 3 * 1E3);
-
-        	const image = document.body.querySelector('#card>img');
-        	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
-
-        	const codes = Array.from([
-        		2401090558439, // demo
-        		2402016060104, // demo
-        		2408775194852, // aral
-        	]).filter(function(entry) {
-        		return entry != parseInt(address.searchParams.get('data'));
-        	});
-        	address.searchParams.set('data', codes.at(parseInt(Math.random() * codes.length)));
-
-        	const loader = document.createElement('img');
-        	loader.addEventListener('load', function() {
-        		image.setAttribute('width', loader.width);
-        		image.setAttribute('height', loader.height);
-        		image.setAttribute('src', address.href);
-        		setTimeout(repeat, 3 * 1E3);
-        	});
-        	loader.addEventListener('error', function() {
-        		setTimeout(repeat, 7 * 1E3);
-        	});
-        	loader.setAttribute('src', address.href);
-        });
-
-
-    </script>
-    <script type="text/javascript">
-
-        addEventListener('hashchange', function() {
-        	const valid = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
-        		const show = `#${node.getAttribute('id')}` == location.hash;
-        		node.style.display = show ? 'block' : 'none';
-        		return show;
-        	}).filter(Boolean);
-
-        	if (valid.length < 1)
-        		location.hash = '#start';
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-        	dispatchEvent(new CustomEvent('hashchange'));
-        });
-
-    </script>
   </head>
   <body>
     <header>
