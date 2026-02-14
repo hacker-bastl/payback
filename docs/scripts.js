@@ -43,11 +43,9 @@ document.addEventListener('ALTERNATIVE', function() {
 
 
 	setInterval(function() {
-
 		const selected = available.shift();
-		available.push(selected);
-
 		const image = document.body.querySelector('#card>img');
 		image.setAttribute('src', selected.getAttribute('src'));
+		available.push(selected);
 	}, 3 * 1E3);
 });
