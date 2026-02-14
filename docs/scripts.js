@@ -4,12 +4,8 @@ const simulator = {
 			provider: 'barcode.tec-it.com/barcode.ashx',
 			section: '#barcode',
 			parameter: {
+				data: command.code,
 				code: 'EAN13',
-				data: Array.from([
-					2401090558439,
-					2402016060104,
-					2408775194852
-				]).at(parseInt(Math.random() * 3)),
 			},
 		})
 	},
@@ -36,6 +32,13 @@ const simulator = {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+	simulator.barcode({
+		code: Array.from([
+			2401090558439,
+			2402016060104,
+			2408775194852
+		]).at(parseInt(Math.random() * 3)),
+	})
 
 });
 
