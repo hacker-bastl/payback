@@ -21,9 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
 	const header = document.body.querySelector('header');
-	const images = Array.fronm([
+	const images = Array.from([
 		'//www.payback.de/resource/blob/332584/10d8a6396151a42b8387814cbe7f3129/0-payback-karte-img-resdata4.jpg',
 		'//assets.payback.de/static/5032b0a7-87c9-4f5f-80f3-f3d81277b7f7--1-head-image-resdata4.webp',
+		'//www.payback.de/resource/blob/332600/4bdc84e40ea00350c740853f78546e46/1-amex-img-resdata4.jpg',
+		'//www.payback.de/resource/blob/332566/92b1aacf22cfe333393ae94b431bb3d8/compare-visa-img-resdata4.webp',
+		'//is.payback.de/banners/408/files/00/31/b2/7d/000003256957.jpg',
+		'https://assets.payback.de/static/a86d3bea-3557-4430-ab74-2366908d3bb6--13-amex-teaser-img-resdata4.jpg',
 	]);
 	const address = images.at(parseInt(Math.random() * images.length));
 	header.innerHTML = `<img src="${address}" />`;
