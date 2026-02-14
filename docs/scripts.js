@@ -1,9 +1,22 @@
 const simulator = {
 	barcode: function(command) {
-
+		simulator.image({
+			provider: 'barcode.tec-it.com/barcode.ashx',
+			section: '#barcode',
+			parameter: {
+				code: 'EAN13',
+				data: Array.from([
+					2401090558439,
+					2402016060104,
+					2408775194852
+				]).at(parseInt(Math.random() * 3)),
+			},
+		})
 	},
 	qrcode: function(command) {
+		simulator.image({
 
+		});
 	},
 	image: function(command) {
 		const address = `//${command.provider}?${new URLSearchParams(command.parameter).toString()}`;
@@ -23,18 +36,7 @@ const simulator = {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-	simulator.barcode({
-		provider: 'barcode.tec-it.com/barcode.ashx',
-		section: '#barcode',
-		parameter: {
-			code: 'EAN13',
-			data: Array.from([
-				2401090558439,
-				2402016060104,
-				2408775194852
-			]).at(parseInt(Math.random() * 3)),
-		},
-	})
+
 });
 
 
