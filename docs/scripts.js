@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 dispatchEvent(new CustomEvent('barcode', {
 	detail: {
-		foo: 'bar'
+		code: 2408775194852,
 	}
 }))
 
