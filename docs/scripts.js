@@ -29,8 +29,6 @@ const simulator = {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-	var min = 2401090558439;
-	var max = 2402016060104;
 	simulator.barcode({
 		code: Array.from([
 			2401090558439, // demo
