@@ -67,12 +67,27 @@ const simulator = {
 		const address = `//${command.provider}?${new URLSearchParams(command.parameter).toString()}`;
 		const parent = document.body.querySelector(command.section);
 		const image = document.createElement('img');
+		image.setAttribute('crossorigin', 'anonymous');
 		image.setAttribute('src', address);
 		image.addEventListener('load', function() {
 			image.setAttribute('width', image.width);
 			image.setAttribute('height', image.height);
 			parent.innerHTML = ``;
 			parent.appendChild(image);
+
+
+			const canvas = document.createElement('canvas');
+			canvas.setAttribute('height', image.height);
+			canvas.setAttribute('width', image.width);
+			const context = canvas.getContext('2d');
+			context.drawImage(image, 0, 0, image.width, image.height);
+			canvas.toBlob(function(blob) {
+				const cached = URL.createObjectURL(blob);
+				// URL.revokeObjectURL(cached);
+				console.log(cached);
+				canvas.remove();
+			}, 'image/jpeg', 0.85);
+
 		});
 		image.setAttribute('src', address);
 	},
