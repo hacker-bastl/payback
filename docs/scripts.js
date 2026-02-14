@@ -4,20 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.body.querySelector('footer').innerHTML = JSON.parse(request.responseText).sort(function() {
 			return Math.random() < 0.5 ? -1 : +1;
 		}).slice(0, 5).map(function(url) {
-			return `<img src:'"${url}" />`;
+			return `<img src="${url}" />`;
 		}).join('\n');
 	});
 	request.open('GET', 'partner.json');
 	request.send(null);
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
 	const parameter = new URLSearchParams({
 		data: 2408775194852,
 		code: 'EAN13',
 	});
-
 	const address = `//barcode.tec-it.com/barcode.ashx?${parameter.toString()}`;
 	const parent = document.body.querySelector('main');
 	const image = document.createElement('img');
@@ -30,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
 	const parameter = new URLSearchParams({
+		text: 989224010905584390036164906591784883046512702842838211301612433891020016615416515525271611162339640155201571077813781111046542065626349766452802631144381802731830912061660828688061876077996438347039552679405367001711839606582546176359921246424520366665421949208817288330482,
 		style: 0,
 		inner_eye_style: 0,
 		outer_eye_style: 0,
@@ -65,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		width: 500,
 		height: 500,
 		bordersize: 2,
-		text: '989224010905584390036164906591784883046512702842838211301612433891020016615416515525271611162339640155201571077813781111046542065626349766452802631144381802731830912061660828688061876077996438347039552679405367001711839606582546176359921246424520366665421949208817288330482'
 	});
 	const address = `//genqrcode.com/embedded?${parameter.toString()}`;
 	const parent = document.body.querySelector('main');
