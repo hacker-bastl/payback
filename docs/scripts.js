@@ -12,13 +12,12 @@ const simulator = {
 		const address = `//${'barcode.tec-it.com/barcode.ashx'}?${new URLSearchParams(command.parameter).toString()}`;
 		const image = document.body.querySelector('#card>img');
 		const loader = document.createElement('img');
-		// image.setAttribute('crossorigin', 'anonymous');
-		loader.setAttribute('src', address);
 		loader.addEventListener('load', function() {
 			image.setAttribute('width', loader.width);
 			image.setAttribute('height', loader.height);
 			image.setAttribute('src', address);
 		});
+		loader.setAttribute('src', address);
 		loader.setAttribute('src', address);
 	},
 };
