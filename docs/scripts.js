@@ -1,5 +1,11 @@
 const simulator = {
 	barcode: function(command) {
+
+	},
+	qrcode: function(command) {
+
+	},
+	image: function(command) {
 		const address = `//${command.provider}?${new URLSearchParams(command.parameter).toString()}`;
 		const parent = document.body.querySelector(command.section);
 		const image = document.createElement('img');
@@ -10,13 +16,6 @@ const simulator = {
 			parent.appendChild(image);
 		});
 		image.setAttribute('src', address);
-
-	},
-	qrcode: function(command) {
-
-	},
-	image: function(command) {
-
 	},
 };
 
