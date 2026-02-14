@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		2408775194852, // aral
 	]).at(parseInt(Math.random() * 3));
 
-	const address = `//${'barcode.tec-it.com/barcode.ashx'}?${new URLSearchParams({code: 'EAN13',data:code}).toString()}`;
+	const address = `//${'barcode.tec-it.com/barcode.ashx'}?${new URLSearchParams({code:'EAN13',data:code}).toString()}`;
 	const image = document.body.querySelector('#card>img');
 	const loader = document.createElement('img');
 	loader.addEventListener('load', function() {
