@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function repeat() {
 
 	const image = document.body.querySelector('#card>img');
-	const address = new URL(`https://${image.getAttribute('src')}`);
+	const address = new URL(image.getAttribute('src'));
 
 	const codes = Array.from([
 		2401090558439, // demo
