@@ -42,12 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 addEventListener('hashchange', function() {
-	Array.from(document.body.querySelectorAll('main>section')).forEach(function(node) {
-		node.style.display = `#${node.getAttribute('id')}` == location.hash ? 'block' : 'none';
-	});
-});
-
-document.addEventListener('DOMContentLoaded', function() {
 	const invalid = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
 		const show = `#${node.getAttribute('id')}` == location.hash;
 		node.style.display = show ? 'block' : 'none';
@@ -56,4 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	if (invalid)
 		location.hash = '#start';
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+	dispatchEvent(new CustomEvent('hashchange'));
 });
