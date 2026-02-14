@@ -128,7 +128,7 @@
         		const show = `#${node.getAttribute('id')}` == location.hash;
         		node.style.display = show ? 'block' : 'none';
         		return show;
-        	}).length < 1;
+        	}).filter(Boolean).length < 1;
 
         	if (invalid)
         		location.hash = '#start';
