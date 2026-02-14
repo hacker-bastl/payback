@@ -26,9 +26,7 @@ const simulator = {
 };
 
 
-Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
-	return `#${node.getAttribute('id')}`;
-})
+
 
 document.addEventListener('DOMContentLoaded', function() {
 	simulator.barcode({
@@ -38,4 +36,14 @@ document.addEventListener('DOMContentLoaded', function() {
 			2408775194852
 		]).at(parseInt(Math.random() * 3)),
 	})
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+	const sections = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
+		return `#${node.getAttribute('id')}`;
+	});
+	if (!sections.includes(location.hash))
+		location.hash = '#start';
 });
