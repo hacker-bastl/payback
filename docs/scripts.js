@@ -14,7 +14,7 @@ addEventListener('barcode', function(event) {
 		provider: 'barcode.tec-it.com/barcode.ashx',
 		section: '#barcode',
 		parameter: {
-			data: `${event.detail}`,
+			data: event.detail,
 			code: 'EAN13',
 		},
 	};
