@@ -130,7 +130,7 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-        	dispatchEvent(new CustomEvent('hashchange'));
+            if(location.hash=='')location.hash='#start';
         });
 
     </script>
