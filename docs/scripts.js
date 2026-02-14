@@ -49,8 +49,5 @@ document.addEventListener('ALTERNATIVE', function() {
 
 		const image = document.body.querySelector('#card>img');
 		image.setAttribute('src', selected.getAttribute('src'));
-
-
-	}, 3E3);
-
+	}, 3 * 1E3);
 });
