@@ -4,25 +4,10 @@ const simulator = {
 			provider: 'barcode.tec-it.com/barcode.ashx',
 			section: '#card',
 			parameter: {
-				data: command.code,
 				code: 'EAN13',
+				data: command.code,
 			},
 		})
-	},
-	qrcode: function(command) {
-		simulator.image({
-			provider: 'genqrcode.com/embedded',
-			section: '#pay',
-			parameter: {
-				text: command.code,
-				imageformat: 'png',
-				background_color: '#FFFFFFFF',
-				color: 'FF0000',
-				bordersize: 0,
-				width: 500,
-				height: 500,
-			},
-		});
 	},
 	image: function(command) {
 		const address = `//${command.provider}?${new URLSearchParams(command.parameter).toString()}`;
@@ -65,11 +50,4 @@ document.addEventListener('DOMContentLoaded', function() {
 			2408775194852
 		]).at(parseInt(Math.random() * 3)),
 	})
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-	simulator.qrcode({
-		code: '989224010905584390036164906591784883046512702842838211301612433891020016615416515525271611162339640155201571077813781111046542065626349766452802631144381802731830912061660828688061876077996438347039552679405367001711839606582546176359921246424520366665421949208817288330482',
-	});
 });
