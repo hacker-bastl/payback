@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	const request = new XMLHttpRequest();
 	request.addEventListener('load', function() {
 		const partner = JSON.parse(request.responseText);
-
+		const images = partner.sort(function() {
+			return Math.random() < 0.5 ? -1 : +1;
+		}).slice(0, 5);
 		footer.innerHTML = Array.from([
 			'<strong>Jetzt Punkte einl&ouml;sen</strong>',
-			partner.sort(function() {
-				return Math.random() < 0.5 ? -1 : +1;
-			}).slice(0, 5).map(function(url) {
+			images.map(function(url) {
 				return `<img src="${url}" />`;
 			}).join('\n'),
 			`Du kannst <strong>${2000}&deg;P</strong> einl&ouml;sen`
