@@ -71,6 +71,7 @@ const simulator = {
 		image.addEventListener('load', function() {
 			image.setAttribute('width', image.width);
 			image.setAttribute('height', image.height);
+			parent.innerHTML = ``;
 			parent.appendChild(image);
 		});
 		image.setAttribute('src', address);
