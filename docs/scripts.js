@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function repeat() {
 
+	if (location.hash != '#card')
+		return setTimeout(repeat, 5E3);
+
 	const image = document.body.querySelector('#card>img');
 	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
 
