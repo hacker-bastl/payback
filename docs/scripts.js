@@ -44,7 +44,7 @@ const simulator = {
 
 addEventListener('hashchange', function() {
 	Array.from(document.body.querySelectorAll('main>section')).forEach(function(node) {
-		node.style.display = `#${node.getAttribute('id')}`; == location.hash ? 'block' : 'none';
+		node.style.display = `#${node.getAttribute('id')}` == location.hash ? 'block' : 'none';
 	});
 });
 
