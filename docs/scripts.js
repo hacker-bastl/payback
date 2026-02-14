@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				return `<section><img src="${url}" /></section>`;
 			}).join('\n'),
 			`Du kannst <strong>${2}&deg;P</strong> einl&ouml;sen`
-		]).join('\n');
+		]).join('<br />');
 	});
 	request.open('GET', 'partner.json');
 	request.send(null);
