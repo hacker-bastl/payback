@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function repeat() {
-	setTimeout(repeat, 13E3);
 
 	const code = Array.from([
 		2401090558439, // demo
@@ -14,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		image.setAttribute('width', loader.width);
 		image.setAttribute('height', loader.height);
 		image.setAttribute('src', address);
+		setTimeout(repeat, 13E3);
 	});
 	loader.setAttribute('src', address);
 	loader.setAttribute('src', address);
