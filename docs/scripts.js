@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 
 document.addEventListener('ALTERNATIVE', function() {
 
-
 	const available = Array.from([
 		2401090558439, // demo
 		2402016060104, // demo
@@ -40,7 +39,6 @@ document.addEventListener('ALTERNATIVE', function() {
 		image.setAttribute('src', `//barcode.tec-it.com/barcode.ashx?code=EAN13&data=${code}`);
 		return image;
 	});
-
 
 	setInterval(function() {
 		const selected = available.shift();
