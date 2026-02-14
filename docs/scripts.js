@@ -26,10 +26,9 @@ const simulator = {
 };
 
 
-
-document.addEventListener('DOMContentLoaded', function() {
-	if (location.hash == '') location.hash = '#start';
-});
+Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
+	return `#${node.getAttribute('id')}`;
+})
 
 document.addEventListener('DOMContentLoaded', function() {
 	simulator.barcode({
