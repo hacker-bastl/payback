@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		'//www.payback.de/resource/blob/332600/4bdc84e40ea00350c740853f78546e46/1-amex-img-resdata4.jpg',
 		'//www.payback.de/resource/blob/332566/92b1aacf22cfe333393ae94b431bb3d8/compare-visa-img-resdata4.webp',
 		'//is.payback.de/banners/408/files/00/31/b2/7d/000003256957.jpg',
-		'https://assets.payback.de/static/a86d3bea-3557-4430-ab74-2366908d3bb6--13-amex-teaser-img-resdata4.jpg',
+		'//assets.payback.de/static/a86d3bea-3557-4430-ab74-2366908d3bb6--13-amex-teaser-img-resdata4.jpg',
 	]);
 	const address = images.at(parseInt(Math.random() * images.length));
 	header.innerHTML = `<img src="${address}" />`;
