@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 	const image = document.body.querySelector('#card>img');
 	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
 
-	const current = parseInt(address.searchParams.get('data'));
 	const codes = Array.from([
 		2401090558439, // demo
 		2402016060104, // demo
 		2408775194852, // aral
 	]).filter(function(entry) {
-		return entry != current;
+		return entry != parseInt(address.searchParams.get('data'));
 	});
 	address.searchParams.set('data', codes.at(parseInt(Math.random() * codes.length)));
 
