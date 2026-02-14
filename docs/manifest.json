@@ -1,0 +1,23 @@
+{
+    "short_name": "Payback",
+    "name": "HackerBastl® Payback™",
+    "description": "//github.com/hacker-bastl/payback/#readme",
+    "start_url": "/payback",
+    "scope": "/payback",
+    "orientation": "portrait",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#003EB0",
+    "lang": "en-US",
+    "launch_handler": {
+        "client_mode": "focus-existing"
+    },
+    "icons": [
+        {
+            "src": "//www.payback.de/resource/blob/4506/b8323ff55b34054722769ae5652c22ae/main-favicon.ico",
+            "type": "image/png",
+            "sizes": "48x48",
+            "density": "1.0"
+        }
+    ]
+}
