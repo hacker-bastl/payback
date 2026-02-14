@@ -24,26 +24,18 @@ const simulator = {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-	dispatchEvent(new CustomEvent('barcode', {
-		detail: Array.from([
-			2401090558439,
-			2402016060104,
-			2408775194852
-		]).at(parseInt(Math.random() * 3)),
-	}));
-});
-
-addEventListener('barcode', function(event) {
-
-	const command = {
+	simulator.barcode({
 		provider: 'barcode.tec-it.com/barcode.ashx',
 		section: '#barcode',
 		parameter: {
-			data: event.detail,
 			code: 'EAN13',
+			data: Array.from([
+				2401090558439,
+				2402016060104,
+				2408775194852
+			]).at(parseInt(Math.random() * 3)),
 		},
-	};
-
+	})
 });
 
 
