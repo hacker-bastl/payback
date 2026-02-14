@@ -20,8 +20,10 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		image.setAttribute('height', loader.height);
 		image.setAttribute('src', address.href);
 
-		const delay = Math.sin(new Date().getTime() / 2E3) * 0.5 + 0.5;;
-		setTimeout(repeat, 2 * 1E3);
+		const delay = Math.sin(new Date().getTime() / 2E3) * 0.5 + 0.5;
+		const seconds = 1 + del;
+		ay * 3;
+		setTimeout(repeat, parseInt(seconds * 1E3));
 	});
 	loader.addEventListener('error', function() {
 		setTimeout(repeat, 7 * 1E3);
