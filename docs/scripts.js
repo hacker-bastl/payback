@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			2408775194852,
 			2402016060104,
 			2401090558439,
-		]).at(parseInt(Math.random() * 4))
+		]).at(parseInt(Math.random() * 4)),
 	}));
 });
 
