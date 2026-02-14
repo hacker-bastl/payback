@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.body.querySelector('footer').innerHTML = JSON.parse(request.responseText).sort(function() {
 			return Math.random() < 0.5 ? -1 : +1;
 		}).slice(0, 5).map(function(url) {
-			return `<img src="${url}" />`;
+			return `<section><img src="${url}" /></section>`;
 		}).join('\n');
 	});
 	request.open('GET', 'partner.json');
