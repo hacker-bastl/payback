@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			partner.sort(function() {
 				return Math.random() < 0.5 ? -1 : +1;
 			}).slice(0, 5).map(function(url) {
-				return `<section><img src="${url}" /></section>`;
+				return `<img src="${url}" />`;
 			}).join('\n'),
 			`Du kannst <strong>${2000}&deg;P</strong> einl&ouml;sen`
 		]).join('<br />');
