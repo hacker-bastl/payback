@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function repeat() {
+	setTimeout(repeat, 13E3);
+
 	const code = Array.from([
 		2401090558439, // demo
 		2402016060104, // demo
