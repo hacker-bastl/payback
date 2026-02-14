@@ -16,13 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
 	const code = 2408775194852
 
 	const provider = 'barcode.tec-it.com/barcode.ashx';
+	const section = 'barcode';
 	const parameter = new URLSearchParams({
 		code: 'EAN13',
 		data: code,
 	});
 
 	const address = `//${provider}?${parameter.toString()}`;
-	const parent = document.body.querySelector('main');
+	const parent = document.body.querySelector(`#${section}`);
 	const image = document.createElement('img');
 	image.setAttribute('src', address);
 	image.setAttribute('title', code);
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	const code = 989224010905584390036164906591784883046512702842838211301612433891020016615416515525271611162339640155201571077813781111046542065626349766452802631144381802731830912061660828688061876077996438347039552679405367001711839606582546176359921246424520366665421949208817288330482;
 
 	const provider = 'genqrcode.com/embedded';
+	const section = 'qr-code';
 	const parameter = new URLSearchParams({
 		style: 0,
 		inner_eye_style: 0,
@@ -80,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 
 	const address = `//${provider}?${parameter.toString()}`;
-	const parent = document.body.querySelector('main');
+	const parent = document.body.querySelector(`#${section}`);
 	const image = document.createElement('img');
 	image.setAttribute('src', address);
 	image.setAttribute('title', code);
