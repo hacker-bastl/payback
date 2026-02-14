@@ -63,6 +63,8 @@ const simulator = {
 			},
 			parameter: {
 				text: command.code,
+				background_color: '#FFFFFFFF',
+				color: 'FF0000',
 				imageformat: 'png',
 				bordersize: 0,
 				width: 500,
