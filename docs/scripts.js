@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 addEventListener('barcode', function(event) {
 
-
 	const command = {
 		provider: 'barcode.tec-it.com/barcode.ashx',
 		section: '#barcode',
