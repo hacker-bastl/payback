@@ -2,11 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
 	const request = new XMLHttpRequest();
 	request.addEventListener('load', function() {
 		document.body.querySelector('footer').innerHTML = Array.from([
+			'Jetzt Punkte einl&ouml;sen',
 			JSON.parse(request.responseText).sort(function() {
 				return Math.random() < 0.5 ? -1 : +1;
 			}).slice(0, 5).map(function(url) {
 				return `<section><img src="${url}" /></section>`;
 			}).join('\n'),
+			`Du kannst <strong>${2}&deg;P</strong> einl&ouml;sen`
 		]).join('\n');
 	});
 	request.open('GET', 'partner.json');
