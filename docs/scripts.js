@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		const partner = JSON.parse(request.responseText);
 
 		footer.innerHTML = Array.from([
-			'Jetzt Punkte einl&ouml;sen',
+			'<strong>Jetzt Punkte einl&ouml;sen</strong>',
 			partner.sort(function() {
 				return Math.random() < 0.5 ? -1 : +1;
 			}).slice(0, 5).map(function(url) {
