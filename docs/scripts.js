@@ -29,6 +29,8 @@ const simulator = {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+	var min = 2401090558439;
+	var max = 2402016060104;
 	simulator.barcode({
 		code: Array.from([
 			2401090558439, // demo
@@ -36,16 +38,4 @@ document.addEventListener('DOMContentLoaded', function() {
 			2408775194852, // aral
 		]).at(parseInt(Math.random() * 3)),
 	})
-});
-
-
-addEventListener('hashchange', function() {
-	const valid = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
-		const show = `#${node.getAttribute('id')}` == location.hash;
-		node.style.display = show ? 'block' : 'none';
-		return show;
-	}).filter(Boolean);
-
-	if (valid.length < 1)
-		location.hash = '#start';
 });
