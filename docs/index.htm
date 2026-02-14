@@ -104,7 +104,7 @@
       }
 
 
-      main section#pay {
+      main section[id!=start] {
         display: none;
       }
 
@@ -145,6 +145,10 @@
       </section>
     </header>
     <main>
+      <section id="start">
+        <template>
+        </template>
+      </section>
       <section id="card">
         <template>
         </template>
