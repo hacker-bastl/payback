@@ -61,6 +61,16 @@ const simulator = {
 				style: 0,
 				type: 0,
 			},
+			parameter: {
+
+				text: command.code,
+
+				width: 500,
+				height: 500,
+				bordersize: 2,
+				imageformat: 'svg',
+
+			},
 		});
 	},
 	image: function(command) {
