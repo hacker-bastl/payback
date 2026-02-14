@@ -4,10 +4,6 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
 	const current = parseInt(address.searchParams.get('data'));
 
-	const minimum = 2401090558439;
-	const maximum = 2402016060104;
-	const random = parseInt(minimum + Math.random() * (maximum - minimum));
-
 	const codes = Array.from([
 		2401090558439, // demo
 		2402016060104, // demo
@@ -17,6 +13,13 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 	});
 
 	address.searchParams.set('data', codes.at(parseInt(Math.random() * codes.length)));
+
+	const minimum = 2401090558439;
+	const maximum = 2402016060104;
+	const random = minimum + Math.random() * (maximum - minimum);
+
+	address.searchParams.set('data', parseInt(random));
+
 
 	const loader = document.createElement('img');
 	loader.addEventListener('load', function() {
