@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function repeat() {
+document.addEventListener('DEACTIVATED', function repeat() {
 
 	if (location.hash != '#card') return setTimeout(repeat, 5E3);
 
@@ -33,26 +33,29 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 
 });
 
+document.addEventListener('DOMContentLoaded', function() {
 
 
-const available = Array.from([
-	2401090558439, // demo
-	2402016060104, // demo
-	2408775194852, // aral
-]).map(function(code) {
-	const image = new Image();
-	image.setAttribute('src', `//barcode.tec-it.com/barcode.ashx?code=EAN13&data=${code}`);
-	return image;
+	const available = Array.from([
+		2401090558439, // demo
+		2402016060104, // demo
+		2408775194852, // aral
+	]).map(function(code) {
+		const image = new Image();
+		image.setAttribute('src', `//barcode.tec-it.com/barcode.ashx?code=EAN13&data=${code}`);
+		return image;
+	});
+
+
+	setInterval(function() {
+
+		const selected = available.shift();
+		available.push(selected);
+
+		const image = document.body.querySelector('#card>img');
+		image.setAttribute('src', selected.getAttribute('src'));
+
+
+	}, 3E3);
+
 });
-
-
-setInterval(function() {
-
-	const selected = available.shift();
-	available.push(selected);
-
-	const image = document.body.querySelector('#card>img');
-	image.setAttribute('src', selected.getAttribute('src'));
-
-
-}, 3E3);
