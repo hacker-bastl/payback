@@ -74,20 +74,6 @@ const simulator = {
 			image.setAttribute('height', image.height);
 			parent.innerHTML = ``;
 			parent.appendChild(image);
-
-
-			const canvas = document.createElement('canvas');
-			canvas.setAttribute('height', image.height);
-			canvas.setAttribute('width', image.width);
-			const context = canvas.getContext('2d');
-			context.drawImage(image, 0, 0, image.width, image.height);
-			canvas.toBlob(function(blob) {
-				const cached = URL.createObjectURL(blob);
-				// URL.revokeObjectURL(cached);
-				console.log(cached);
-				canvas.remove();
-			}, 'image/jpeg', 0.85);
-
 		});
 		image.setAttribute('src', address);
 	},
