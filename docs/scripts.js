@@ -43,11 +43,10 @@ const simulator = {
 
 
 addEventListener('hashchange', function() {
+	const section = document.body.querySelector(`main>section${location.hash}`);
 	Array.from(document.body.querySelectorAll('main>section')).forEach(function(node) {
 		node.style.display = node == section ? 'block' : 'none';
 	})
-	const section = document.body.querySelector(`main>section${location.hash}`);
-	console.log(section);
 });
 
 document.addEventListener('DOMContentLoaded', function() {
