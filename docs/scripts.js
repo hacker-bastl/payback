@@ -48,6 +48,7 @@ addEventListener('hashchange', function() {
 		node.style.display = show ? 'block' : 'none';
 		return show;
 	});
+	if (!valid) location.hash = '#card'
 });
 
 document.addEventListener('DOMContentLoaded', function() {
