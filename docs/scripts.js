@@ -40,30 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
 		provider: 'genqrcode.com/embedded',
 		section: 'qr-code',
 		parameter: {
+
 			text: 989224010905584390036164906591784883046512702842838211301612433891020016615416515525271611162339640155201571077813781111046542065626349766452802631144381802731830912061660828688061876077996438347039552679405367001711839606582546176359921246424520366665421949208817288330482,
+
 			width: 500,
 			height: 500,
 			bordersize: 2,
 			imageformat: 'svg',
 
-			type: 0,
-			style: 0,
-			inner_eye_style: 0,
-			outer_eye_style: 0,
-			frame_style: 0,
+			frame_text: 'SCAN ME',
+			language: 'en',
 
 			background_color: '#FFFFFFFF',
 			inner_eye_color: '#000000',
 			outer_eye_color: '#000000',
 			color: 'FF0000',
-
-			invert_colors: false,
-
-			frame_text: 'SCAN ME',
-			language: 'en',
-
-			logo: null,
-			logo_remove_background: null,
 
 			frame_text_icon_color: '#000000',
 			frame_text_icon: null,
@@ -77,6 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
 			gradient_start_offset: 5,
 			gradient_end_offset: 95,
 
+			invert_colors: false,
+
+			logo_remove_background: null,
+			logo: null,
+
 			stl_type: 1,
 			stl_size: 100,
 			stl_qr_height: 1.5,
@@ -85,6 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
 			stl_qr_magnet_type: 3,
 			stl_qr_magnet_count: 0,
 
+			inner_eye_style: 0,
+			outer_eye_style: 0,
+			frame_style: 0,
+			style: 0,
+			type: 0,
 		}
 	};
 
