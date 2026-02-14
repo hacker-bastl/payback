@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		footer.innerHTML = Array.from([
 			'<strong>Jetzt Punkte einl&ouml;sen</strong>',
 			images.map(function(url) {
-				return `<img src="${url}" />`;
+				return `<a href="//www.payback.de/partner"><img src="${url}" /></a>`;
 			}).join('\n'),
 			`<small>Du kannst <strong>${2000}&deg;P</strong> einl&ouml;sen</small>`
 		]).join('<br />');
@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		'//www.payback.de/resource/blob/332566/92b1aacf22cfe333393ae94b431bb3d8/compare-visa-img-resdata4.webp',
 		'//is.payback.de/banners/408/files/00/31/b2/7d/000003256957.jpg',
 		'//assets.payback.de/static/a86d3bea-3557-4430-ab74-2366908d3bb6--13-amex-teaser-img-resdata4.jpg',
+		'//www.payback.group/fileadmin/Images/Logos/Logo_PAYBACK.svg',
 	]);
 	const address = images.at(parseInt(Math.random() * images.length));
 	header.innerHTML = `<img src="${address}" />`;
