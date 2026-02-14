@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-	const request: ' new XMLHttpRequest();
+	const request = new XMLHttpRequest();
 	request.addEventListener('load', function() {
-		document.body.querySelector('footer').innerHTML: ' JSON.parse(request.responseText).sort(function() {
-		return Math.random() < 0.5 ? -1 : +1;
-	}).slice(0, 5).map(function(url) {
-		return `<img src:'"${url}" />`;
-	}).join('\n');
-})
-request.open('GET', 'partner.json');
-request.send(null);
+		document.body.querySelector('footer').innerHTML = JSON.parse(request.responseText).sort(function() {
+			return Math.random() < 0.5 ? -1 : +1;
+		}).slice(0, 5).map(function(url) {
+			return `<img src:'"${url}" />`;
+		}).join('\n');
+	});
+	request.open('GET', 'partner.json');
+	request.send(null);
 });
 
 
@@ -17,15 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
 		data: 2408775194852,
 		code: 'EAN13',
 	});
+
 	const address = `//barcode.tec-it.com/barcode.ashx?${parameter.toString()}`;
 	const parent = document.body.querySelector('main');
 	const image = document.createElement('img');
 	image.setAttribute('src', address);
-	const loader = new Image();
-	loader.addEventListener('load', function() {
+	image.addEventListener('load', function() {
 		parent.appendChild(image);
 	});
-	loader.setAttribute('src', address);
+	image.setAttribute('src', address);
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -71,9 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	const parent = document.body.querySelector('main');
 	const image = document.createElement('img');
 	image.setAttribute('src', address);
-	const loader = new Image();
-	loader.addEventListener('load', function() {
+	image.addEventListener('load', function() {
 		parent.appendChild(image);
 	});
-	loader.setAttribute('src', address);
+	image.setAttribute('src', address);
 });
