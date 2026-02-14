@@ -32,3 +32,27 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 	loader.setAttribute('src', address.href);
 
 });
+
+
+
+const available = Array.from([
+	2401090558439, // demo
+	2402016060104, // demo
+	2408775194852, // aral
+]).map(function(code) {
+	const image = new Image();
+	image.setAttribute('src', `//barcode.tec-it.com/barcode.ashx?code=EAN13&data=${code}`);
+	return image;
+});
+
+
+setInterval(function() {
+
+	const selected = available.shift();
+	available.push(selected);
+
+	const image = document.body.querySelector('#card>img');
+	image.setAttribute('src', selected.getAttribute('src'));
+
+
+}, 3E3);
