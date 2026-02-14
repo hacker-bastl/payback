@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	image.setAttribute('title', code);
 	image.setAttribute('alt', code);
 	image.addEventListener('load', function() {
+		image.setAttribute('width', image.width);
+		image.setAttribute('height', image.height);
 		parent.appendChild(image);
 	});
 	image.setAttribute('src', address);
@@ -84,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	image.setAttribute('title', code);
 	image.setAttribute('alt', code);
 	image.addEventListener('load', function() {
+		image.setAttribute('width', image.width);
+		image.setAttribute('height', image.height);
 		parent.appendChild(image);
 	});
 	image.setAttribute('src', address);
