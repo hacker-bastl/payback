@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			images.map(function(url) {
 				return `<img src="${url}" />`;
 			}).join('\n'),
-			`Du kannst <strong>${2000}&deg;P</strong> einl&ouml;sen`
+			`<small>Du kannst <strong>${2000}&deg;P</strong> einl&ouml;sen</small>`
 		]).join('<br />');
 	});
 	request.open('GET', 'partner.json');
