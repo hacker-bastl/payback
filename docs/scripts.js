@@ -27,6 +27,9 @@ const simulator = {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+	if (location.hash == '') location.hash = '#start';
+});
 
 document.addEventListener('DOMContentLoaded', function() {
 	simulator.barcode({
