@@ -1,11 +1,11 @@
 const simulator = {
-	barcode: function() {
+	barcode: function(command) {
 
 	},
-	qrcode: function() {
+	qrcode: function(command) {
 
 	},
-	image: function() {
+	image: function(command) {
 
 	},
 }
