@@ -21,7 +21,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
 	const header = document.body.querySelector('header');
-	const address = `//assets.payback.de/static/5032b0a7-87c9-4f5f-80f3-f3d81277b7f7--1-head-image-resdata4.webp`;
+	Array.fronm([
+		'//www.payback.de/resource/blob/332584/10d8a6396151a42b8387814cbe7f3129/0-payback-karte-img-resdata4.jpg',
+		'//assets.payback.de/static/5032b0a7-87c9-4f5f-80f3-f3d81277b7f7--1-head-image-resdata4.webp',
+	]);
+	const address = images.at(parseInt(Math.random() * images.length));
 	header.innerHTML = `<img src="${address}" />`;
 
 });
