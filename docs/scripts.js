@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
 	const request = new XMLHttpRequest();
 	request.addEventListener('load', function() {
+		const partner = JSON.parse(request.responseText);
 		document.body.querySelector('footer').innerHTML = Array.from([
 			'Jetzt Punkte einl&ouml;sen',
-			JSON.parse(request.responseText).sort(function() {
+			partner.sort(function() {
 				return Math.random() < 0.5 ? -1 : +1;
 			}).slice(0, 5).map(function(url) {
 				return `<section><img src="${url}" /></section>`;
