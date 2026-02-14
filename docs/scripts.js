@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
 	dispatchEvent(new CustomEvent('barcode', {
-		detail: 2408775194852,
+		detail: Array.from([
+			2408775194852
+			2408775194852,
+			2402016060104,
+			2401090558439,
+		])
 	}));
 });
 
