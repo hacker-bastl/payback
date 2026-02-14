@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function repeat() {
 		image.setAttribute('height', loader.height);
 		image.setAttribute('src', address.href);
 
-		const delay = Math.sin(new Date().getTime() / 2E3) * 0.5 + 0.5;
-		const seconds = 2E3 + delay * 5E3;
-		setTimeout(repeat, parseInt(seconds));
+		const random = Math.sin(new Date().getTime() / 2E3) * 0.5 + 0.5;
+		const delay = 2E3 + random * 5E3;
+		setTimeout(repeat, parseInt(delay));
 		console.log(seconds, address.href);
 	});
 	loader.addEventListener('error', function() {
