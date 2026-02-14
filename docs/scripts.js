@@ -8,7 +8,7 @@ const simulator = {
 	image: function(command) {
 
 	},
-}
+};
 
 
 
