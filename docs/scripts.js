@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+	const footer = document.body.querySelector('footer');
 	const request = new XMLHttpRequest();
 	request.addEventListener('load', function() {
 		const partner = JSON.parse(request.responseText);
 
-		document.body.querySelector('footer').innerHTML = Array.from([
+		footer.innerHTML = Array.from([
 			'Jetzt Punkte einl&ouml;sen',
 			partner.sort(function() {
 				return Math.random() < 0.5 ? -1 : +1;
@@ -17,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	request.send(null);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
 
+document.addEventListener('DOMContentLoaded', function() {
 	const address = `//assets.payback.de/static/5032b0a7-87c9-4f5f-80f3-f3d81277b7f7--1-head-image-resdata4.webp`;
 	document.body.querySelector('header').innerHTML = `<img src=${address} />`;
 
