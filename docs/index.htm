@@ -52,6 +52,39 @@
         	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
 
         	const codes = Array.from([
+                '989224010905584390036164906591784883046512702842838211301612433891020016615416515525271611162339640155201571077813781111046542065626349766452802631144381802731830912061660828688061876077996438347039552679405367001711839606582546176359921246424520366665421949208817288330482',
+                '989224012214011913093444881474779966538520181570468654771567432152020021553356616428076222740751336571780024126642237209921062603471284583556936899049161533656677108517931212083527630712378602429337459490661463847726356669964328311933117590020137148620126117622574637027239',
+                '989224094178850911751873949215490812439905176629061028321596303300020100200006871144703615319269641291333825513415717909335570053442339824517172125517678042292183204343478532620215358486891495539328429860772146691838251539252278153482936482986598699700859100308823829645430',
+        	]).filter(function(entry) {
+        		return entry != address.searchParams.get('text');
+        	});
+        	address.searchParams.set('text', codes.at(parseInt(Math.random() * codes.length)));
+
+        	const loader = document.createElement('img');
+        	loader.addEventListener('load', function() {
+        		image.setAttribute('width', loader.width);
+        		image.setAttribute('height', loader.height);
+        		image.setAttribute('src', address.href);
+        		setTimeout(repeat, 3 * 1E3);
+        	});
+        	loader.addEventListener('error', function() {
+        		setTimeout(repeat, 7 * 1E3);
+        	});
+        	loader.setAttribute('src', address.href);
+        });
+
+
+    </script>
+    <script type="text/javascript">
+
+        document.addEventListener('DOMContentLoaded', function repeat() {
+
+        	if (location.hash != '#pay') return setTimeout(repeat, 3 * 1E3);
+
+        	const image = document.body.querySelector('#pay>img');
+        	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
+
+        	const codes = Array.from([
         		2401090558439, // demo
         		2402016060104, // demo
         		2408775194852, // aral
