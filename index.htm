@@ -35,6 +35,13 @@
         		location.hash = '#start';
         });
 
+        addEventListener('hashchange', function() {
+        	Array.from(document.body.querySelectorAll('header>section')).map(function(node) {
+        		const bold = node.querySelector('a').getAttribute('href') == location.hash;
+        		node.style.fontWeight = bold ? 'bold' : 'normal';
+        	})
+        });
+
         document.addEventListener('DOMContentLoaded', function() {
         	dispatchEvent(new CustomEvent('hashchange'));
         });
@@ -108,11 +115,9 @@
     <style type="text/css">
 
       body {
-        overscroll-behavior-x: contain;
         overscroll-behavior-y: none;
-        overflow-x: hidden;
-        overflow-y: scroll;
         min-height: 100dvh;
+        overflow: hidden;
       }
 
       body {
