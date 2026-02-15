@@ -28,7 +28,6 @@
         	const valid = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
         		const show = `#${node.getAttribute('id')}` == location.hash;
         		node.style.display = show ? 'block' : 'none';
-        		node.style.width = show ? 'auto' : '0%';
         		return show;
         	}).filter(Boolean);
 
@@ -148,7 +147,6 @@
 
       body * {
         transition-timing-function: ease-in-out;
-        transition-behavior: allow-discrete;
         transition-duration: 0.5s;
         transition-property: all;
       }
@@ -169,6 +167,10 @@
       header {
         text-align: center;
         padding: 1em 0em;
+      }
+
+      header {
+        transition-behavior: allow-discrete;
       }
 
       header section {
