@@ -39,7 +39,7 @@
         	Array.from(document.body.querySelectorAll('header>section')).map(function(node) {
         		const bold = node.querySelector('a').getAttribute('href') == location.hash;
         		node.style.fontWeight = bold ? 'bold' : 'normal';
-        	})
+        	});
         });
 
         document.addEventListener('DOMContentLoaded', function() {
