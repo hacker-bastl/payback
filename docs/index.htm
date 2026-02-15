@@ -46,9 +46,9 @@
 
         document.addEventListener('DOMContentLoaded', function repeat() {
 
-        	if (location.hash != '#card') return setTimeout(repeat, 3 * 1E3);
+        	if (location.hash != '#pay') return setTimeout(repeat, 3 * 1E3);
 
-        	const image = document.body.querySelector('#card>img');
+        	const image = document.body.querySelector('#pay>img');
         	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
 
         	const codes = Array.from([
@@ -78,9 +78,9 @@
 
         document.addEventListener('DOMContentLoaded', function repeat() {
 
-        	if (location.hash != '#pay') return setTimeout(repeat, 3 * 1E3);
+        	if (location.hash != '#card') return setTimeout(repeat, 3 * 1E3);
 
-        	const image = document.body.querySelector('#pay>img');
+        	const image = document.body.querySelector('#card>img');
         	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
 
         	const codes = Array.from([
