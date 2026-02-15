@@ -110,11 +110,16 @@
     <style type="text/css">
 
       body {
+        overscroll-behavior-x: contain;
+        overscroll-behavior-y: none;
+        overflow-x: hidden;
         overflow-y: scroll;
         min-height: 100vh;
       }
 
       body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         font-family: "Open Sans", Arial, sans-serif;
         font-size: 1.4rem;
       }
@@ -140,6 +145,12 @@
       body {
         background-color: #E5ECF6;
         color: #003EB0;
+      }
+
+      body * {
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.5s;
+        transition-property: all;
       }
 
       a, a:visited {
