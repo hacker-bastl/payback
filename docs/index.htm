@@ -62,10 +62,19 @@
 
         	const loader = document.createElement('img');
         	loader.addEventListener('load', function() {
+
         		image.setAttribute('width', loader.width);
         		image.setAttribute('height', loader.height);
         		image.setAttribute('src', address.href);
         		setTimeout(repeat, 3 * 1E3);
+                image.animate([{
+    opacity:1.0,
+},{
+    opacity:0.0,
+}],{
+    iterations: 1,
+    duration:1E3,
+}).then
         	});
         	loader.addEventListener('error', function() {
         		setTimeout(repeat, 7 * 1E3);
