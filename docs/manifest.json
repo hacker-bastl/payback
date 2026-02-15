@@ -14,7 +14,19 @@
     },
     "icons": [
         {
-            "src": "//www.payback.de/resource/blob/4506/b8323ff55b34054722769ae5652c22ae/main-favicon.ico",
+            "src": "//play-lh.googleusercontent.com/WiQDNH4bhP5D8MbOcUu8NKpOISLMTI53XZ_CDF521SAimMeToHzlMK3OmrkeIf81QWE=s512-rw",
+            "type": "image/png",
+            "sizes": "512x512",
+            "density": "1.0"
+        },
+        {
+            "src": "//play-lh.googleusercontent.com/WiQDNH4bhP5D8MbOcUu8NKpOISLMTI53XZ_CDF521SAimMeToHzlMK3OmrkeIf81QWE=s192-rw",
+            "type": "image/png",
+            "sizes": "192x192",
+            "density": "1.0"
+        },
+        {
+            "src": "//play-lh.googleusercontent.com/WiQDNH4bhP5D8MbOcUu8NKpOISLMTI53XZ_CDF521SAimMeToHzlMK3OmrkeIf81QWE=s48-rw",
             "type": "image/png",
             "sizes": "48x48",
             "density": "1.0"
