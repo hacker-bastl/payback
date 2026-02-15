@@ -62,12 +62,10 @@
 
         	const loader = document.createElement('img');
         	loader.addEventListener('load', function() {
-
         		image.setAttribute('width', loader.width);
         		image.setAttribute('height', loader.height);
         		image.setAttribute('src', address.href);
         		setTimeout(repeat, 3 * 1E3);
-
         	});
         	loader.addEventListener('error', function() {
         		setTimeout(repeat, 7 * 1E3);
