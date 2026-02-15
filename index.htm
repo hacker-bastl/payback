@@ -44,6 +44,8 @@
 
         document.addEventListener('DOMContentLoaded', function() {
         	dispatchEvent(new CustomEvent('hashchange'));
+        }, {
+            once: true,
         });
 
     </script>
@@ -76,6 +78,8 @@
         		setTimeout(repeat, 7 * 1E3);
         	});
         	loader.setAttribute('src', address.href);
+        }, {
+            once: true,
         });
 
 
@@ -109,6 +113,8 @@
         		setTimeout(repeat, 7 * 1E3);
         	});
         	loader.setAttribute('src', address.href);
+        }, {
+            once: true,
         });
 
     </script>
