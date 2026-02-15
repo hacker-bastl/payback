@@ -117,6 +117,18 @@
             once: true,
         });
 
+
+    </script>
+    <script type="text/javascript">
+
+        document.addEventListener('DOMContentLoaded', function() {
+            addEventListener('click', function() {
+                navigator.vibrate(2E2);
+            });
+        }, {
+            once: true,
+        });
+
     </script>
     <style type="text/css">
 
@@ -153,7 +165,7 @@
 
       body * {
         transition-timing-function: ease-in-out;
-        transition-duration: 0.5s;
+        transition-duration: 0.1s;
         transition-property: all;
       }
 
@@ -204,7 +216,7 @@
         width: min( 32em, 95% );
         text-align: center;
         border-radius: 5px;
-        margin: 0em auto;
+        margin: 1.0em auto;
       }
 
       main img {
@@ -225,7 +237,7 @@
       }
 
       main section#card {
-        padding: 6.0em 2.0em;
+        padding: 8.0em 2.0em;
       }
 
     </style>
