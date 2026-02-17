@@ -25,37 +25,32 @@
     <script type="text/javascript">
 
         addEventListener('hashchange', function() {
-            const sections = Array.from(document.body.querySelectorAll('main>section'));
-        	const valid = sections.map(function(node) {
+            Array.from(document.body.querySelectorAll('main>section')).forEach(function(node) {
         		const show = `#${node.getAttribute('id')}` == location.hash;
         		node.style.display = show ? 'block' : 'none';
-        		return show;
-        	}).filter(Boolean);
-
-        	if (valid.length < 1)
-        		location.hash = '#start';
+        	})
         });
 
         addEventListener('hashchange', function() {
-        	Array.from(document.body.querySelectorAll('header>section')).map(function(node) {
+        	Array.from(document.body.querySelectorAll('header>section')).forEach(function(node) {
         		const bold = node.querySelector('a').getAttribute('href') == location.hash;
         		node.style.fontWeight = bold ? 'bold' : 'normal';
         	});
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-        	dispatchEvent(new CustomEvent('hashchange'));
-        }, {
-            once: true,
+        document.addEventListener('visibilitychange', function() {
+        	dispatchEvent(new CustomEvent(document.visibilityState));
         });
 
-
-        document.addEventListener('visibilitychange', function() {
-        	if (document.visibilityState === 'hidden')
-        		location.hash = '#start';
+        document.addEventListener('DOMContentLoaded', function() {
+        	location.hash = '#start';
         });
 
         addEventListener('pagehide', function() {
+        	location.hash = '#start';
+        });
+
+        addEventListener('hidden', function() {
         	location.hash = '#start';
         });
 
