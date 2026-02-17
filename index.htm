@@ -25,14 +25,15 @@
     <script type="text/javascript">
 
         addEventListener('hashchange', function() {
-            const sections = Array.from(document.body.querySelectorAll('main>section'));
+        	const sections = Array.from(document.body.querySelectorAll('main>section'));
 
         	const valid = sections.map(function(node) {
         		const show = `#${node.getAttribute('id')}` == location.hash;
-                node.style.display = 'none';
-                return show;
-            }).filter(Boolean).forEach(function(node){
-                node.style.display = 'block';
+        		node.style.display = 'none';
+        		return show;
+        	}).filter(Boolean).map(function(node) {
+        		node.style.display = 'block';
+                return node;
         	});
 
         	if (valid.length < 1)
