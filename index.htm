@@ -49,12 +49,23 @@
             once: true,
         });
 
+
+        document.addEventListener('visibilitychange', function() {
+        	if (document.visibilityState === 'hidden')
+        		location.hash = '#start';
+        });
+
+        addEventListener('pagehide', function() {
+        	location.hash = '#start';
+        });
+
     </script>
     <script type="text/javascript">
 
         document.addEventListener('DOMContentLoaded', function repeat() {
 
-        	if (location.hash != '#card') return setTimeout(repeat, 3 * 1E3);
+        	if (document.visibilityState != 'visible' || location.hash != '#card')
+                return setTimeout(repeat, 3 * 1E3);
 
         	const image = document.body.querySelector('#card>img');
         	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
@@ -89,7 +100,8 @@
 
         document.addEventListener('DOMContentLoaded', function repeat() {
 
-        	if (location.hash != '#pay') return setTimeout(repeat, 3 * 1E3);
+        	if (document.visibilityState != 'visible' || location.hash != '#pay')
+                return setTimeout(repeat, 3 * 1E3);
 
         	const image = document.body.querySelector('#pay>img');
         	const address = new URL(`${location.protocol}//${image.getAttribute('src').split('//').pop()}`);
