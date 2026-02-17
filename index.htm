@@ -25,11 +25,15 @@
     <script type="text/javascript">
 
         addEventListener('hashchange', function() {
-        	const valid = Array.from(document.body.querySelectorAll('main>section')).map(function(node) {
+            const sections = Array.from(document.body.querySelectorAll('main>section'));
+
+        	const valid = sections.map(function(node) {
         		const show = `#${node.getAttribute('id')}` == location.hash;
-        		node.style.display = show ? 'block' : 'none';
-        		return show;
-        	}).filter(Boolean);
+                node.style.display = 'none';
+                return show;
+            }).filter(Boolean).forEach(function(node){
+                node.style.display = 'block';
+        	});
 
         	if (valid.length < 1)
         		location.hash = '#start';
@@ -184,7 +188,7 @@
 
       header {
         text-align: center;
-        padding: 1em 0em;
+        padding: 2em 0em;
       }
 
       header {
