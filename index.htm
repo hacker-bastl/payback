@@ -30,7 +30,7 @@
         	const valid = sections.map(function(node) {
         		const show = `#${node.getAttribute('id')}` == location.hash;
         		node.style.display = 'none';
-        		return show;
+        		return show && node;
         	}).filter(Boolean).map(function(node) {
         		node.style.display = 'block';
                 return node;
