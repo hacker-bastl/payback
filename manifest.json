@@ -6,7 +6,7 @@
     "scope": "/payback",
     "orientation": "portrait",
     "display": "standalone",
-    "background_color": "#FFFFFF",
+    "background_color": "#E5ECF6",
     "theme_color": "#003EB0",
     "lang": "en-US",
     "launch_handler": {
